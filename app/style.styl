@@ -5,3 +5,42 @@
 @import 'styles/mixins/_rem.styl'
 @import 'styles/mixins/_media.styl'
 @import 'styles/mixins/_composer.styl'
+.about
+.contact
+.page-footer
+  background-color: #fafafa
+.page-footer
+  padding-top: rem(40px)
+  padding-bottom: rem(40px)
+.copyright-text
+  font-size: rem(14px)
+.scroll-down
+  position: absolute
+  display: block
+  bottom: rem(50px)
+  left: 50%
+  transform: translate(-50%)
+  &__icon
+    position: absolute
+    top: rem(16px)
+    left: 50%
+    width: rem(24px)
+    height: rem(24px)
+    border-left: rem(1px) base_color solid
+    border-bottom: rem(1px) base_color solid
+    transform: translate(-50%) rotate(-45deg)
+.scroll-up
+  position: fixed
+  display: none
+  bottom: rem(20px)
+  right: rem(20px)
+  z-index: 100
+  &__icon
+    position: absolute
+    bottom: rem(16px)
+    left: 50%
+    width: rem(24px)
+    height: rem(24px)
+    border-left: rem(1px) base_color solid
+    border-bottom: rem(1px) base_color solid
+    transform: translate(-50%) rotate(135deg)
