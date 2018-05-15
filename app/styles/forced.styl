@@ -1,0 +1,20 @@
+@import 'variables/_colors.styl'
+@import 'variables/_sizes.styl'
+@import 'variables/_parameters.styl'
+@import 'variables/_initiator.styl'
+@import 'mixins/_rem.styl'
+@import 'mixins/_media.styl'
+@import 'mixins/_composer.styl'
++composer(forced)
+  +composer(visually-hidden)
+    .visually-hidden:not(:focus):not(:active)
+      position: absolute
+      width: 1px
+      height: 1px
+      margin: -1px
+      border: 0
+      padding: 0
+      white-space: nowrap
+      clip-path: inset(100%)
+      clip: rect(0 0 0 0)
+      overflow: hidden

@@ -1,0 +1,11 @@
+@import 'variables/_colors.styl'
+@import 'variables/_sizes.styl'
+@import 'variables/_initiator.styl'
+@import 'mixins/_rem.styl'
+@import 'mixins/_composer.styl'
++composer(base)
+  .base
+    overflow-x: hidden
+    color: base_color
+    font-family: 'Helvetica', 'Roboto', 'Arial', sans-serif
+    font-size: rem(base_text_font-size)

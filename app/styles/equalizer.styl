@@ -1,0 +1,52 @@
+@import 'variables/_colors.styl'
+@import 'variables/_sizes.styl'
+@import 'variables/_parameters.styl'
+@import 'variables/_initiator.styl'
+@import 'mixins/_rem.styl'
+@import 'mixins/_media.styl'
+@import 'mixins/_composer.styl'
++composer(equalizer)
+  +composer(heading_clear)
+    .heading
+      &--clear
+        margin-top: 0
+        margin-bottom: 0
+        color: base_color
+        font-weight: 400
+        font-size: rem(base_heading_font-size)
+  +composer(text_clear)
+    .text
+      &--clear
+        margin-top: 0
+        margin-bottom: 0
+        color: base_color
+        font-weight: 400
+        font-size: rem(base_text_font-size)
+  +composer(link_clear)
+    .link
+      &--clear
+        color: base_color
+        text-decoration: none
+        font-size: rem(base_text_font-size)
+  +composer(list_clear)
+    .list
+      &--clear
+        margin-top: 0
+        margin-bottom: 0
+        padding-left: 0
+        list-style: none
+  +composer(image_auto)
+    .image
+      &--auto
+        width: 100%
+        height: auto
+        vertical-align: middle
+  +composer(button_clear)
+    .button
+      &--clear
+        padding: 0
+        border: 0
+        background-color: transparent
+        color: base_color
+        white-space: nowrap
+        user-select: none

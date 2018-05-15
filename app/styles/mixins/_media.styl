@@ -1,0 +1,8 @@
+wider(value)
+  query = '(min-width: %s)' % value
+  @media query
+    {block}
+narrower(value)
+  query = '(max-width: %s)' % value
+  @media query
+    {block}

@@ -1,0 +1,13 @@
+@import 'variables/_colors.styl'
+@import 'variables/_sizes.styl'
+@import 'variables/_parameters.styl'
+@import 'variables/_initiator.styl'
+@import 'mixins/_rem.styl'
+@import 'mixins/_media.styl'
+@import 'mixins/_composer.styl'
++composer(utility)
+  +composer(text-align)
+    .text-align
+      +composer(text-align_center)
+        &--center
+          text-align: center

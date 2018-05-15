@@ -1,0 +1,38 @@
+{
+  "name": "ethcrawfords-build-system",
+  "version": "1.0.0",
+  "description": "no description",
+  "main": "index.js",
+  "repository": "git@github.com:ethcrawford/ethcrawfords-build-system.git",
+  "author": "Ethan Crawford <ethcrawford@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "brunch watch --server",
+    "watch": "brunch watch",
+    "build-dev": "brunch build",
+    "build": "brunch build --production",
+    "static": "static public",
+    "sprite": "node sprite.js",
+    "clean-public": "rm -rf public/",
+    "clean-sprite": "rm -rf sprite/"
+  },
+  "devDependencies": {
+    "auto-reload-brunch": "^2.7.1",
+    "autoprefixer": "^8.4.1",
+    "brunch": "^2.10.12",
+    "clean-css-brunch": "^2.10.0",
+    "css-mqpacker": "^6.0.2",
+    "html-pages-brunch": "^2.7.0",
+    "imagemin-brunch": "^1.1.0",
+    "node-sprite-generator": "^0.10.2",
+    "node-static": "^0.7.10",
+    "poststylus": "^1.0.0",
+    "pugjs-brunch": "^2.10.2",
+    "stylus-brunch": "^2.10.0",
+    "uglify-js-brunch": "^2.10.0"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}

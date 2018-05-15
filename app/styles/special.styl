@@ -1,0 +1,130 @@
+@import 'variables/_colors.styl'
+@import 'variables/_sizes.styl'
+@import 'variables/_parameters.styl'
+@import 'variables/_initiator.styl'
+@import 'variables/_sprite.styl'
+@import 'mixins/_rem.styl'
+@import 'mixins/_media.styl'
+@import 'mixins/_composer.styl'
+@import 'mixins/_sprite.styl'
++composer(special)
+  +composer(page-header)
+    .page-header
+      position: fixed
+      top: 0
+      left: 0
+      z-index: page-header_z-index
+      padding: rem(44px) 0
+      width: 100%
+      background-color: transparent
+      transition: all .37s cubic-bezier(0, 0, .58, 1)
+  +composer(navbar)
+    .navbar
+      display: flex
+      align-items: center
+      justify-content: space-between
+      &__logo
+        margin-right: rem(40px)
+  +composer(app-logo)
+    .app-logo
+      font-weight: 700
+      font-size: rem(24px)
+      text-decoration: line-through
+  +composer(navbar-list)
+    .navbar-list
+      &__item
+        margin-right: rem(30px)
+        &--last
+          margin-right: 0
+      &__link
+        &:hover
+          text-decoration: line-through
+  +composer(slide-out-menu)
+    .slide-out-menu
+      position: fixed
+      top: 0
+      left: rem(-300px)
+      z-index: slide-out-menu_z-index
+      overflow-y: auto
+      padding: rem(40px)
+      width: rem(300px)
+      height: 100%
+      background-color: slide-out-menu_bg-color
+      transition: all .7s cubic-bezier(.545, 0, .05, 1)
+      +wider(media-lg)
+        left: rem(-380px)
+        width: rem(380px)
+    .slide-out-menu-overlay
+      display: none
+      position: fixed
+      top: 0
+      left: 0
+      z-index: slide-out-menu-overlay_z-index
+      width: 100%
+      height: 100%
+  +composer(menu)
+    .menu
+      &__title
+        margin-bottom: rem(20px)
+        color: white_color
+      &__toggle
+        position: absolute
+        top: rem(40px)
+        right: rem(40px)
+        border-color: white_color
+        color: white_color
+      &__button
+        margin-bottom: rem(16px)
+        border-color: white_color
+        color: white_color
+        &:hover, &:active
+          border-color: white_color
+          background-color: white_color
+          color: base_color
+  +composer(menu-header)
+    .menu-header
+      display: flex
+      align-items: center
+      &__button
+        margin-left: auto
+  +composer(menu-list)
+    .menu-list
+      margin-bottom: rem(20px)
+      &__item
+        margin-bottom: rem(16px)
+        &--last
+          margin-bottom: 0
+      &__link
+        color: white_color
+        &:hover
+          text-decoration: line-through
+  +composer(sprite-icon_special)
+    .sprite-icon
+      &--arrow-left
+        sprite-position(sprite-arrow-left)
+        sprite-width(sprite-arrow-left)
+        sprite-height(sprite-arrow-left)
+      &--arrow-right
+        sprite-position(sprite-arrow-right)
+        sprite-width(sprite-arrow-right)
+        sprite-height(sprite-arrow-right)
+      &--butterfly
+        sprite-position(sprite-butterfly)
+        sprite-width(sprite-butterfly)
+        sprite-height(sprite-butterfly)
+      &--cat
+        sprite-position(sprite-cat)
+        sprite-width(sprite-cat)
+        sprite-height(sprite-cat)
+      &--cloud
+        sprite-position(sprite-cloud)
+        sprite-width(sprite-cloud)
+        sprite-height(sprite-cloud)
+      &--cloud3
+        sprite-position(sprite-cloud3)
+        sprite-width(sprite-cloud3)
+        sprite-height(sprite-cloud3)
+      &--marker
+        sprite-position(sprite-marker)
+        sprite-width(sprite-marker)
+        sprite-height(sprite-marker)

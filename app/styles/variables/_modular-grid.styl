@@ -1,0 +1,205 @@
+// [START]
+
+/* Grid
+------------------------------------------------*/
+columns-number = 12 // default: 12
+gutter-width = 15px // default: 15px
+
+/* Container
+------------------------------------------------*/
+container-fluid = false // requires: gutter-width, default: true
+container = true // requires: gutter-width, default: true
+//
+container-xs = false // requires: [media-xs, container], default: 400px
+container-sm = 540px // requires: [media-sm, container], default: 540px
+container-md = 720px // requires: [media-md, container], default: 720px
+container-lg = 960px // requires: [media-lg, container], default: 960px
+container-xl = 1140px // requires: [media-xl, container], default: 1140px
+
+/* Row
+------------------------------------------------*/
+row = true // requires: gutter-width, defautl: true
+no-gutters = false // requires: row, default: false
+
+/* Flex columns
+------------------------------------------------*/
+column-flex = false // requires: row, default: false
+//
+column-xs-flex = false // requires: [media-xs, row], default: false
+column-sm-flex = false // requires: [media-sm, row], default: false
+column-md-flex = false // requires: [media-md, row], default: false
+column-lg-flex = false // requires: [media-lg, row], default: false
+column-xl-flex = false // requires: [media-xl, row], default: false
+
+/* Auto columns
+------------------------------------------------*/
+column-auto = false // requires: [media-xs, row], default: false
+//
+column-xs-auto = false // requires: [media-xs, row], default: false
+column-sm-auto = false // requires: [media-xs, row], default: false
+column-md-auto = false // requires: [media-xs, row], default: false
+column-lg-auto = false // requires: [media-xs, row], default: false
+column-xl-auto = false // requires: [media-xs, row], default: false
+
+/* Fixed size columns
+------------------------------------------------*/
+column = false // requires: row, default: true
+column-list-default = 1 2 3 4 5 6 7 8 9 10 11 12 // default: [1 2 3 4 5 6 7 8 9 10 11 12] depends on columns-number
+//
+column-xs = false // requires: row, default: true
+column-list-xs = 1 2 3 4 5 6 7 8 9 10 11 12 // default: [1 2 3 4 5 6 7 8 9 10 11 12] depends on columns-number
+//
+column-sm = false // requires: row, default: true
+column-list-sm = 1 2 3 4 5 6 7 8 9 10 11 12 // default: [1 2 3 4 5 6 7 8 9 10 11 12] depends on columns-number
+//
+column-md = false // requires: row, default: true
+column-list-md = 1 2 3 4 5 6 7 8 9 10 11 12 // default: [1 2 3 4 5 6 7 8 9 10 11 12] depends on columns-number
+//
+column-lg = true // requires: row, default: true
+column-list-lg = 1 2 3 4 5 6 7 8 9 10 11 12 // default: [1 2 3 4 5 6 7 8 9 10 11 12] depends on columns-number
+//
+column-xl = false // requires: row, default: true
+column-list-xl = 1 2 3 4 5 6 7 8 9 10 11 12 // default: [1 2 3 4 5 6 7 8 9 10 11 12] depends on columns-number
+
+/* First order
+------------------------------------------------*/
+order-first = false // requires: column, default: false
+//
+order-xs-first = false // requires: [media-xs, column-xs], default: false
+order-sm-first = false // requires: [media-sm, column-sm], default: false
+order-md-first = false // requires: [media-md, column-md], default: false
+order-lg-first = false // requires: [media-lg, column-lg], default: false
+order-xl-first = false // requires: [media-xl, column-xl], default: false
+
+/* Last order
+------------------------------------------------*/
+order-last = false // requires: column, default: false
+//
+order-xs-last = false // requires: [media-xs, column-xs], default: false
+order-sm-last = false // requires: [media-sm, column-sm], default: false
+order-md-last = false // requires: [media-md, column-md], default: false
+order-lg-last = false // requires: [media-lg, column-lg], default: false
+order-xl-last = false // requires: [media-xl, column-xl], default: false
+
+/* Fixed order
+------------------------------------------------*/
+order = false // requires: column, default: false
+order-list-default = 0 1 2 3 4 5 6 7 8 9 10 11 12 // default: [0 1 2 3 4 5 6 7 8 9 10 11 12] depends on columns-number
+//
+order-xs = false // requires: [media-xs, column-xs], default: false
+order-list-xs = 0 1 2 3 4 5 6 7 8 9 10 11 12 // default: [0 1 2 3 4 5 6 7 8 9 10 11 12] depends on columns-number
+//
+order-sm = false // requires: [media-sm, column-sm], default: false
+order-list-sm = 0 1 2 3 4 5 6 7 8 9 10 11 12 // default: [0 1 2 3 4 5 6 7 8 9 10 11 12] depends on columns-number
+//
+order-md = false // requires: [media-md, column-md], default: false
+order-list-md = 0 1 2 3 4 5 6 7 8 9 10 11 12 // default: [0 1 2 3 4 5 6 7 8 9 10 11 12] depends on columns-number
+//
+order-lg = false // requires: [media-lg, column-lg], default: false
+order-list-lg = 0 1 2 3 4 5 6 7 8 9 10 11 12 // default: [0 1 2 3 4 5 6 7 8 9 10 11 12] depends on columns-number
+//
+order-xl = false // requires: [media-xl, column-xl], default: false
+order-list-xl = 0 1 2 3 4 5 6 7 8 9 10 11 12 // default: [0 1 2 3 4 5 6 7 8 9 10 11 12] depends on columns-number
+
+/* Offset
+------------------------------------------------*/
+offset = false // requires: column, default: false
+offset-list-default = 0 1 2 3 4 5 6 7 8 9 10 11 // default: [0 1 2 3 4 5 6 7 8 9 10 11] depends on columns-number
+//
+offset-xs = false // requires: [media-xs, column-xs], default: false
+offset-list-xs = 0 1 2 3 4 5 6 7 8 9 10 11 // default: [0 1 2 3 4 5 6 7 8 9 10 11] depends on columns-number
+//
+offset-sm = false // requires: [media-sm, column-sm], default: false
+offset-list-sm = 0 1 2 3 4 5 6 7 8 9 10 11 // default: [0 1 2 3 4 5 6 7 8 9 10 11] depends on columns-number
+//
+offset-md = false // requires: [media-md, column-md], default: false
+offset-list-md = 0 1 2 3 4 5 6 7 8 9 10 11 // default: [0 1 2 3 4 5 6 7 8 9 10 11] depends on columns-number
+//
+offset-lg = true // requires: [media-lg, column-lg], default: false
+offset-list-lg = 0 1 2 3 4 5 6 7 8 9 10 11 // default: [0 1 2 3 4 5 6 7 8 9 10 11] depends on columns-number
+//
+offset-xl = false // requires: [media-xl, column-xl], default: false
+offset-list-xl = 0 1 2 3 4 5 6 7 8 9 10 11 // default: [0 1 2 3 4 5 6 7 8 9 10 11] depends on columns-number
+//
+
+/* Justify content
+------------------------------------------------*/
+justify-content = false // requires: row, default: false
+justify-content-list-default = 'start' 'end' 'center' 'between' 'around' // default: ['start' 'end' 'center' 'between' 'around']
+//
+justify-content-xs = false // requires: [media-xs, row], default: false
+justify-content-list-xs = 'start' 'end' 'center' 'between' 'around' // default: ['start' 'end' 'center' 'between' 'around']
+//
+justify-content-sm = false // requires: [media-sm, row], default: false
+justify-content-list-sm = 'start' 'end' 'center' 'between' 'around' // default: ['start' 'end' 'center' 'between' 'around']
+//
+justify-content-md = false // requires: [media-md, row], default: false
+justify-content-list-md = 'start' 'end' 'center' 'between' 'around' // default: ['start' 'end' 'center' 'between' 'around']
+//
+justify-content-lg = false // requires: [media-lg, row], default: false
+justify-content-list-lg = 'start' 'end' 'center' 'between' 'around' // default: ['start' 'end' 'center' 'between' 'around']
+//
+justify-content-xl = false // requires: [media-xl, row], default: false
+justify-content-list-xl = 'start' 'end' 'center' 'between' 'around' // default: ['start' 'end' 'center' 'between' 'around']
+
+/* Align items
+------------------------------------------------*/
+align-items = false // requires: row, default: false
+align-items-list-default = 'start' 'end' 'center' 'baseline' 'stretch' // default: ['start' 'end' 'center' 'baseline' 'stretch']
+//
+align-items-xs = false // requires: [media-xs, row], default: false
+align-items-list-xs = 'start' 'end' 'center' 'baseline' 'stretch' // default: ['start' 'end' 'center' 'baseline' 'stretch']
+//
+align-items-sm = false // requires: [media-sm, row], default: false
+align-items-list-sm = 'start' 'end' 'center' 'baseline' 'stretch' // default: ['start' 'end' 'center' 'baseline' 'stretch']
+//
+align-items-md = false // requires: [media-md, row], default: false
+align-items-list-md = 'start' 'end' 'center' 'baseline' 'stretch' // default: ['start' 'end' 'center' 'baseline' 'stretch']
+//
+align-items-lg = false // requires: [media-lg, row], default: false
+align-items-list-lg = 'start' 'end' 'center' 'baseline' 'stretch' // default: ['start' 'end' 'center' 'baseline' 'stretch']
+//
+align-items-xl = false // requires: [media-xl, row], default: false
+align-items-list-xl = 'start' 'end' 'center' 'baseline' 'stretch' // default: ['start' 'end' 'center' 'baseline' 'stretch']
+
+/* Align content
+------------------------------------------------*/
+align-content = false // requires: row, default: false
+align-content-list-default = 'start' 'end' 'center' 'between' 'around' 'stretch' // default: ['start' 'end' 'center' 'between' 'around' 'stretch']
+//
+align-content-xs = false // requires: [media-xs, row], default: false
+align-content-list-xs = 'start' 'end' 'center' 'between' 'around' 'stretch' // default: ['start' 'end' 'center' 'between' 'around' 'stretch']
+//
+align-content-sm = false // requires: [media-sm, row], default: false
+align-content-list-sm = 'start' 'end' 'center' 'between' 'around' 'stretch' // default: ['start' 'end' 'center' 'between' 'around' 'stretch']
+//
+align-content-md = false // requires: [media-md, row], default: false
+align-content-list-md = 'start' 'end' 'center' 'between' 'around' 'stretch' // default: ['start' 'end' 'center' 'between' 'around' 'stretch']
+//
+align-content-lg = false // requires: [media-lg, row], default: false
+align-content-list-lg = 'start' 'end' 'center' 'between' 'around' 'stretch' // default: ['start' 'end' 'center' 'between' 'around' 'stretch']
+//
+align-content-xl = false // requires: [media-xl, row], default: false
+align-content-list-xl = 'start' 'end' 'center' 'between' 'around' 'stretch' // default: ['start' 'end' 'center' 'between' 'around' 'stretch']
+
+/* Align self
+------------------------------------------------*/
+align-self = false // requires: column, default: false
+align-self-list-default = 'auto' 'start' 'end' 'center' 'baseline' 'stretch' // default: ['auto' 'start' 'end' 'center' 'baseline' 'stretch']
+//
+align-self-xs = false // requires: [media-xs, column-xs], default: false
+align-self-list-xs = 'auto' 'start' 'end' 'center' 'baseline' 'stretch' // default: ['auto' 'start' 'end' 'center' 'baseline' 'stretch']
+//
+align-self-sm = false // requires: [media-sm, column-sm], default: false
+align-self-list-sm = 'auto' 'start' 'end' 'center' 'baseline' 'stretch' // default: ['auto' 'start' 'end' 'center' 'baseline' 'stretch']
+//
+align-self-md = false // requires: [media-md, column-md], default: false
+align-self-list-md = 'auto' 'start' 'end' 'center' 'baseline' 'stretch' // default: ['auto' 'start' 'end' 'center' 'baseline' 'stretch']
+//
+align-self-lg = false // requires: [media-lg, column-lg], default: false
+align-self-list-lg = 'auto' 'start' 'end' 'center' 'baseline' 'stretch' // default: ['auto' 'start' 'end' 'center' 'baseline' 'stretch']
+//
+align-self-xl = false // requires: [media-xl, column-xl], default: false
+align-self-list-xl = 'auto' 'start' 'end' 'center' 'baseline' 'stretch' // default: ['auto' 'start' 'end' 'center' 'baseline' 'stretch']
+//
+// [END]

@@ -1,0 +1,591 @@
+///*
+// * Ethcrawfords grid system
+// * Based on flex-grid-framework and bootstrap 4 grid
+// * v1.0.0 2018
+// * Licensed under MIT
+// */
+///**
+// * Use the node-css-mqpacker tool or similar tool to optimize the number of media queries
+// */
+
+@import 'variables/_sizes.styl'
+@import 'variables/_modular-grid.styl'
+
+///**
+// * Ethcrawfords grid core (ethcrawfords-grid-core.styl)
+// * GENERATOR
+// */
+// [START]
+
+// Container
+//----------------------------------------------*/
+$common-container
+  width 100%
+  padding-right gutter-width
+  padding-left @padding-right
+  margin-right auto
+  margin-left @margin-right
+
+if (container && gutter-width)
+  .container
+    @extends $common-container
+  //
+  if (container-xs && media-xs)
+    @media (min-width media-xs)
+      .container
+        max-width container-xs
+  //
+  if (container-sm && media-sm)
+    @media (min-width media-sm)
+      .container
+        max-width container-sm
+  //
+  if (container-md && media-md)
+    @media (min-width media-md)
+      .container
+        max-width container-md
+  //
+  if (container-lg && media-lg)
+    @media (min-width media-lg)
+      .container
+        max-width container-lg
+  //
+  if (container-xl && media-xl)
+    @media (min-width media-xl)
+      .container
+        max-width container-xl
+//
+if (container-fluid)
+  .container-fluid
+    @extends $common-container
+
+/* Row
+------------------------------------------------*/
+if (container && row)
+  .row
+    display flex
+    flex-wrap wrap
+    margin-right -(gutter-width)
+    margin-left @margin-right
+
+/* No gutters
+------------------------------------------------*/
+if (no-gutters)
+  .no-gutters
+    margin-right 0
+    margin-left 0
+  //
+  .no-gutters > .col
+  .no-gutters > [class*='col-']
+    padding-right 0
+    padding-left @padding-right
+
+/* Columns
+------------------------------------------------*/
+$common-column
+  position relative
+  width 100%
+  min-height 1px
+  padding-right gutter-width
+  padding-left @padding-right
+
+flex-column-mixin()
+  flex-basis 0
+  flex-grow 1
+  max-width 100%
+
+auto-column-mixin()
+  flex 0 0 auto
+  width auto
+  max-width none
+
+// Flex columns
+//----------------------------------------------*/
+if (column-flex && row)
+  .col
+    @extends $common-column
+    flex-column-mixin()
+//
+if (column-xs-flex && media-xs && row)
+  @media (min-width media-xs)
+    .col-xs
+      @extends $common-column
+      flex-column-mixin()
+//
+if (column-sm-flex && media-sm && row)
+  @media (min-width media-sm)
+    .col-sm
+      @extends $common-column
+      flex-column-mixin()
+//
+if (column-md-flex && media-md && row)
+  @media (min-width media-md)
+    .col-md
+      @extends $common-column
+      flex-column-mixin()
+//
+if (column-lg-flex && media-lg && row)
+  @media (min-width media-lg)
+    .col-lg
+      @extends $common-column
+      flex-column-mixin()
+//
+if (column-xl-flex && media-xl && row)
+  @media (min-width media-xl)
+    .col-xl
+      @extends $common-column
+      flex-column-mixin()
+
+/* Auto columns
+------------------------------------------------*/
+if (column-auto && row)
+  .col-auto
+    @extends $common-column
+    auto-column-mixin()
+//
+if (column-xs-auto && media-xs && row)
+  @media (min-width media-xs)
+    .col-xs-auto
+      @extends $common-column
+      auto-column-mixin()
+//
+if (column-sm-auto && media-sm && row)
+  @media (min-width media-sm)
+    .col-sm-auto
+      @extends $common-column
+      auto-column-mixin()
+//
+if (column-md-auto && media-md && row)
+  @media (min-width media-md)
+    .col-md-auto
+      @extends $common-column
+      auto-column-mixin()
+//
+if (column-lg-auto && media-lg && row)
+  @media (min-width media-lg)
+    .col-lg-auto
+      @extends $common-column
+      auto-column-mixin()
+//
+if (column-xl-auto && media-xl && row)
+  @media (min-width media-xl)
+    .col-xl-auto
+      @extends $common-column
+      auto-column-mixin()
+
+/* Fixed size columns
+------------------------------------------------*/
+column-generator(column-weight)
+  max-width floor((100% / columns-number * column-weight), 10)
+  flex 0 0 @max-width
+
+if (column && row)
+  for i in column-list-default
+    .col-{i}
+      @extends $common-column
+      column-generator(i)
+//
+if (column-xs && media-xs && row)
+  @media (min-width media-xs)
+    for i in column-list-xs
+      .col-xs-{i}
+        @extends $common-column
+        column-generator(i)
+//
+if (column-sm && media-sm && row)
+  @media (min-width media-sm)
+    for i in column-list-sm
+      .col-sm-{i}
+        @extends $common-column
+        column-generator(i)
+//
+if (column-md && media-md && row)
+  @media (min-width media-md)
+    for i in column-list-md
+      .col-md-{i}
+        @extends $common-column
+        column-generator(i)
+//
+if (column-lg && media-lg && row)
+  @media (min-width media-lg)
+    for i in column-list-lg
+      .col-lg-{i}
+        @extends $common-column
+        column-generator(i)
+//
+if (column-xl && media-xl && row)
+  @media (min-width media-xl)
+    for i in column-list-xl
+      .col-xl-{i}
+        @extends $common-column
+        column-generator(i)
+
+/* Order
+------------------------------------------------*/
+first-order-mixin()
+  order -1
+
+last-order-mixin()
+  order (columns-number + 1)
+
+// First order
+//----------------------------------------------*/
+if (order-first && column)
+  .order-first
+    first-order-mixin()
+//
+if (order-xs-first && media-xs && column-xs)
+  @media (min-width media-xs)
+    .order-xs-first
+      first-order-mixin()
+//
+if (order-sm-first && media-sm && column-sm)
+  @media (min-width media-sm)
+    .order-sm-first
+      first-order-mixin()
+//
+if (order-md-first && media-md && column-md)
+  @media (min-width media-md)
+    .order-md-first
+      first-order-mixin()
+//
+if (order-lg-first && media-lg && column-lg)
+  @media (min-width media-lg)
+    .order-lg-first
+      first-order-mixin()
+//
+if (order-xl-first && media-xl && column-xl)
+  @media (min-width media-xl)
+    .order-xl-first
+      first-order-mixin()
+
+/* Last order
+------------------------------------------------*/
+if (order-last && column)
+  .order-last
+    last-order-mixin()
+//
+if (order-xs-last && media-xs && column-xs)
+  @media (min-width media-xs)
+    .order-xs-last
+      last-order-mixin()
+//
+if (order-sm-last && media-sm && column-sm)
+  @media (min-width media-sm)
+    .order-sm-last
+      last-order-mixin()
+//
+if (order-md-last && media-md && column-md)
+  @media (min-width media-md)
+    .order-md-last
+      last-order-mixin()
+//
+if (order-lg-last && media-lg && column-lg)
+  @media (min-width media-lg)
+    .order-lg-last
+      last-order-mixin()
+//
+if (order-xl-last && media-xl && column-xl)
+  @media (min-width media-xl)
+    .order-xl-last
+      last-order-mixin()
+
+/* Fixed order
+------------------------------------------------*/
+order-generator(order-num)
+  order order-num
+
+if (order && column)
+  for i in order-list-default
+    .order-{i}
+      order-generator(i)
+//
+if (order-xs && media-xs && column-xs)
+  @media (min-width media-xs)
+    for i in order-list-xs
+      .order-xs-{i}
+        order-generator(i)
+//
+if (order-sm && media-sm && column-sm)
+  @media (min-width media-sm)
+    for i in order-list-sm
+      .order-sm-{i}
+        order-generator(i)
+//
+if (order-md && media-md && column-md)
+  @media (min-width media-md)
+    for i in order-list-md
+      .order-md-{i}
+        order-generator(i)
+//
+if (order-lg && media-lg && column-lg)
+  @media (min-width media-lg)
+    for i in order-list-lg
+      .order-lg-{i}
+        order-generator(i)
+//
+if (order-xl && media-xl && column-xl)
+  @media (min-width media-xl)
+    for i in order-list-xl
+      .order-xl-{i}
+        order-generator(i)
+
+/* Offset
+------------------------------------------------*/
+offset-generator(offset-weight)
+  margin-left floor((100% / columns-number * offset-weight), 10)
+
+if (offset && column)
+  for i in offset-list-default
+    .offset-{i}
+      offset-generator(i)
+//
+if (offset-xs && media-xs && column-xs)
+  @media (min-width media-xs)
+    for i in offset-list-xs
+      .offset-xs-{i}
+        offset-generator(i)
+//
+if (offset-sm && media-sm && column-sm)
+  @media (min-width media-sm)
+    for i in offset-list-sm
+      .offset-sm-{i}
+        offset-generator(i)
+//
+if (offset-md && media-md && column-md)
+  @media (min-width media-md)
+    for i in offset-list-md
+      .offset-md-{i}
+        offset-generator(i)
+//
+if (offset-lg && media-lg && column-lg)
+  @media (min-width media-lg)
+    for i in offset-list-lg
+      .offset-lg-{i}
+        offset-generator(i)
+//
+if (offset-xl && media-xl && column-xl)
+  @media (min-width media-xl)
+    for i in offset-list-xl
+      .offset-xl-{i}
+        offset-generator(i)
+
+/* Justify content
+------------------------------------------------*/
+justify-content-generator(string)
+  if (string == 'start')
+    justify-content flex-start
+  //
+  if (string == 'end')
+    justify-content flex-end
+  //
+  if (string == 'center')
+    justify-content center
+  //
+  if (string == 'between')
+    justify-content space-between
+  //
+  if (string == 'around')
+    justify-content space-around
+
+if (justify-content && row)
+  for i in justify-content-list-default
+    .justify-content-{i}
+      justify-content-generator(i)
+//
+if (justify-content-xs && media-xs && row)
+  @media (min-width media-xs)
+    for i in justify-content-list-xs
+      .justify-content-xs-{i}
+        justify-content-generator(i)
+//
+if (justify-content-sm && media-sm && row)
+  @media (min-width media-sm)
+    for i in justify-content-list-sm
+      .justify-content-sm-{i}
+        justify-content-generator(i)
+//
+if (justify-content-md && media-md && row)
+  @media (min-width media-md)
+    for i in justify-content-list-md
+      .justify-content-md-{i}
+        justify-content-generator(i)
+//
+if (justify-content-lg && media-lg && row)
+  @media (min-width media-lg)
+    for i in justify-content-list-lg
+      .justify-content-lg-{i}
+        justify-content-generator(i)
+//
+if (justify-content-xl && media-xl && row)
+  @media (min-width media-xl)
+    for i in justify-content-list-xl
+      .justify-content-xl-{i}
+        justify-content-generator(i)
+
+/* Align items
+------------------------------------------------*/
+align-items-generator(string)
+  if (string == 'start')
+    align-items flex-start
+  //
+  if (string == 'end')
+    align-items flex-end
+  //
+  if (string == 'center')
+    align-items center
+  //
+  if (string == 'baseline')
+    align-items baseline
+  //
+  if (string == 'stretch')
+    align-items stretch
+
+if (align-items && row)
+  for i in align-items-list-default
+    .align-items-{i}
+      align-items-generator(i)
+//
+if (align-items-xs && media-xs && row)
+  @media (min-width media-xs)
+    for i in align-items-list-xs
+      .align-items-xs-{i}
+        align-items-generator(i)
+//
+if (align-items-sm && media-sm && row)
+  @media (min-width media-sm)
+    for i in align-items-list-sm
+      .align-items-sm-{i}
+        align-items-generator(i)
+//
+if (align-items-md && media-md && row)
+  @media (min-width media-md)
+    for i in align-items-list-md
+      .align-items-md-{i}
+        align-items-generator(i)
+//
+if (align-items-lg && media-lg && row)
+  @media (min-width media-lg)
+    for i in align-items-list-lg
+      .align-items-lg-{i}
+        align-items-generator(i)
+//
+if (align-items-xl && media-xl && row)
+  @media (min-width media-xl)
+    for i in align-items-list-xl
+      .align-items-xl-{i}
+        align-items-generator(i)
+
+/* Align content
+------------------------------------------------*/
+align-content-generator(string)
+  if (string == 'start')
+    align-content flex-start
+  //
+  if (string == 'end')
+    align-content flex-end
+  //
+  if (string == 'center')
+    align-content center
+  //
+  if (string == 'between')
+    align-content space-between
+  //
+  if (string == 'around')
+    align-content space-around
+  //
+  if (string == 'stretch')
+    align-content stretch
+
+if (align-content && row)
+  for i in align-content-list-default
+    .align-content-{i}
+      align-content-generator(i)
+//
+if (align-content-xs && media-xs && row)
+  @media (min-width media-xs)
+    for i in align-content-list-xs
+      .align-content-xs-{i}
+        align-content-generator(i)
+//
+if (align-content-sm && media-sm && row)
+  @media (min-width media-sm)
+    for i in align-content-list-sm
+      .align-content-sm-{i}
+        align-content-generator(i)
+//
+if (align-content-md && media-md && row)
+  @media (min-width media-md)
+    for i in align-content-list-md
+      .align-content-md-{i}
+        align-content-generator(i)
+//
+if (align-content-lg && media-lg && row)
+  @media (min-width media-lg)
+    for i in align-content-list-lg
+      .align-content-lg-{i}
+        align-content-generator(i)
+//
+if (align-content-xl && media-xl && row)
+  @media (min-width media-xl)
+    for i in align-content-list-xl
+      .align-content-xl-{i}
+        align-content-generator(i)
+
+/* Align self
+------------------------------------------------*/
+align-self-generator(string)
+  if (string == 'auto')
+    align-self auto
+  //
+  if (string == 'start')
+    align-self flex-start
+  //
+  if (string == 'end')
+    align-self flex-end
+  //
+  if (string == 'center')
+    align-self center
+  //
+  if (string == 'baseline')
+    align-self baseline
+  //
+  if (string == 'stretch')
+    align-self stretch
+
+if (align-self && column)
+  for i in align-self-list-default
+    .align-self-{i}
+      align-self-generator(i)
+//
+if (align-self-xs && media-xs && column-xs)
+  @media (min-width media-xs)
+    for i in align-self-list-xs
+      .align-self-xs-{i}
+        align-self-generator(i)
+//
+if (align-self-sm && media-sm && column-sm)
+  @media (min-width media-sm)
+    for i in align-self-list-sm
+      .align-self-sm-{i}
+        align-self-generator(i)
+//
+if (align-self-md && media-md && column-md)
+  @media (min-width media-md)
+    for i in align-self-list-md
+      .align-self-md-{i}
+        align-self-generator(i)
+//
+if (align-self-lg && media-lg && column-lg)
+  @media (min-width media-lg)
+    for i in align-self-list-lg
+      .align-self-lg-{i}
+        align-self-generator(i)
+//
+if (align-self-xl && media-xl && column-xl)
+  @media (min-width media-xl)
+    for i in align-self-list-xl
+      .align-self-xl-{i}
+        align-self-generator(i)
+//
+// [END]

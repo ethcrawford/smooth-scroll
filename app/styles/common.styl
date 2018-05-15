@@ -1,0 +1,13 @@
+@import 'variables/_colors.styl'
+@import 'variables/_sizes.styl'
+@import 'variables/_parameters.styl'
+@import 'variables/_initiator.styl'
+@import 'mixins/_rem.styl'
+@import 'mixins/_media.styl'
+@import 'mixins/_composer.styl'
+@import 'mixins/_sprite.styl'
++composer(common)
+  +composer(sprite-icon)
+    .sprite-icon
+      sprite-image()
+      background-repeat: no-repeat

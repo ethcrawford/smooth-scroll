@@ -1,0 +1,34 @@
+@import 'variables/_colors.styl'
+@import 'variables/_sizes.styl'
+@import 'variables/_parameters.styl'
+@import 'variables/_initiator.styl'
+@import 'mixins/_rem.styl'
+@import 'mixins/_media.styl'
+@import 'mixins/_composer.styl'
++composer(switch)
+  +composer(page-header_active)
+    .page-header
+      &--active
+        padding: rem(24px) 0
+        background-color: white_color
+        box-shadow: 0 rem(1px) rem(10px) rgba(0, 0, 0, .15)
+  +composer(slide-out-menu_open)
+    .slide-out-menu
+      &--open
+        left: 0
+    .slide-out-menu-overlay
+      &--active
+        display: block
+  +composer(navbar_toggle_responsive)
+    .navbar
+      &__toggle
+        &--responsive
+          +wider(media-lg)
+            display: none
+  +composer(navbar_list_responsive)
+    .navbar
+      &__list
+        &--responsive
+          display: none
+          +wider(media-lg)
+            display: flex
