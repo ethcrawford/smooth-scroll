@@ -6,18 +6,16 @@ block main
   header.page-header
     .container
       .navbar.page-header__navbar
-        a.link.link--clear.app-logo.navbar__logo(href='#') Brunch
+        a.link.link--clear.app-logo.navbar__logo(href='#about') Brunch
         ul.list.list--clear.inline-list.navbar-list.navbar__list.navbar__list--responsive
           li.navbar-list__item
-            a.link.link--clear.navbar-list__link(href='#') One link
+            a.link.link--clear.navbar-list__link(href='#about') About
           li.navbar-list__item
-            a.link.link--clear.navbar-list__link(href='#') Two link
+            a.link.link--clear.navbar-list__link(href='#portfolio') Portfolio
           li.navbar-list__item
-            a.link.link--clear.navbar-list__link(href='#') Three
-          li.navbar-list__item
-            a.link.link--clear.navbar-list__link(href='#') Four element
+            a.link.link--clear.navbar-list__link(href='#contact') Contact
           li.navbar-list__item.navbar-list__item--last
-            a.link.link--clear.navbar-list__link(href='#') Five
+            a.link.link--clear.navbar-list__link(href='#map') Map
         button.button.button--clear.button--outline.navbar__toggle.navbar__toggle--responsive.slide-out-menu-toggle(type='button') Menu
   .slide-out-menu-container
     nav.menu.slide-out-menu
@@ -26,44 +24,43 @@ block main
         button.button.button--clear.button--outline.menu__button.menu-header__button.slide-out-menu__toggle Close
       ul.list.list--clear.menu-list
         li.menu-list__item
-          a.link.link--clear.menu-list__link(href='#') One link
+          a.link.link--clear.menu-list__link(href='#about') About
         li.menu-list__item
-          a.link.link--clear.menu-list__link(href='#') Two link
+          a.link.link--clear.menu-list__link(href='#portfolio') Portfolio
         li.menu-list__item
-          a.link.link--clear.menu-list__link(href='#') Three
+          a.link.link--clear.menu-list__link(href='#contact') Contact
         li.menu-list__item
-          a.link.link--clear.menu-list__link(href='#') Four element
-        li.menu-list__item.menu-list__item--last
-          a.link.link--clear.menu-list__link(href='#') Five
+          a.link.link--clear.menu-list__link(href='#map') Map
     .slide-out-menu-overlay
   main.main
-    section.section.section--base.section--border-bottom.home-section.text-align.text-align--center
+    section#about.section.section--base.about.text-align.text-align--center
       .container
-        .row
-          .col-lg-8.offset-lg-2
-            h2.heading.heading--clear.section__heading.home-section__heading Section 1
-            p.text.text--clear.section__subtitle.home-section__subtitle Lorem ipsum dolor
-        button.button.button--clear.button--outline.scroll-down(type='button') Scroll
-    section.section.section--base.section--border-bottom.home-section.text-align.text-align--center
+        h2.heading.heading--clear.section__heading.about__heading About
+        p.text.text--clear.section__subtitle.about__subtitle About section
+        a.link.link--clear.scroll-down(href='#portfolio')
+          .scroll-down__icon
+          | Scroll
+    section#portfolio.section.section--base.portfolio.text-align.text-align--center
       .container
-        .row
-          .col-lg-8.offset-lg-2
-            h2.heading.heading--clear.section__heading.home-section__heading Section 2
-            p.text.text--clear.section__subtitle.home-section__subtitle Lorem ipsum dolor
-        button.button.button--clear.button--outline.scroll-down(type='button') Scroll
-    section.section.section--base.section--border-bottom.home-section.text-align.text-align--center
+        h2.heading.heading--clear.section__heading.portfolio__heading Portfolio
+        p.text.text--clear.section__subtitle.portfolio__subtitle Portfolio section
+        a.link.link--clear.scroll-down(href='#contact')
+          .scroll-down__icon
+          | Scroll to next section
+    section#contact.section.section--base.contact.text-align.text-align--center
       .container
-        .row
-          .col-lg-8.offset-lg-2
-            h2.heading.heading--clear.section__heading.home-section__heading Section 3
-            p.text.text--clear.section__subtitle.home-section__subtitle Lorem ipsum dolor
-        button.button.button--clear.button--outline.scroll-down(type='button') Scroll
-    section.section.section--base.section--border-bottom.home-section.text-align.text-align--center
+        h2.heading.heading--clear.section__heading.contact__heading Contact
+        p.text.text--clear.section__subtitle.contact__subtitle Contact section
+        a.link.link--clear.scroll-down(href='#map')
+          .scroll-down__icon
+          | Scroll to Map
+    section#map.section.section--base.map.text-align.text-align--center
       .container
-        .row
-          .col-lg-8.offset-lg-2
-            h2.heading.heading--clear.section__heading.home-section__heading Section 4
-            p.text.text--clear.section__subtitle.home-section__subtitle Lorem ipsum dolor
+        h2.heading.heading--clear.section__heading.map__heading Map
+        p.text.text--clear.section__subtitle.map__subtitle Map section
+    a.link.link--clear.scroll-up(href='#about')
+      .scroll-up__icon
+      | To Top
   footer.page-footer
     .container
       p.text.text--clear.copyright-text &copy; Ethcrawford 2018
