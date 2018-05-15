@@ -22,9 +22,10 @@
     .navbar
       display: flex
       align-items: center
-      justify-content: space-between
       &__logo
         margin-right: rem(40px)
+      &__toggle
+        margin-left: auto
   +composer(app-logo)
     .app-logo
       font-weight: 700
@@ -128,8 +129,3 @@
         sprite-position(sprite-marker)
         sprite-width(sprite-marker)
         sprite-height(sprite-marker)
-  .scroll-down
-    position: absolute
-    bottom: 30px
-    left: 50%
-    transform: translate(-50%)
