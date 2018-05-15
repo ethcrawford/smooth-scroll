@@ -8,7 +8,37 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
       $('.page-header').removeClass('page-header--active');
     }
+    if (wScroll > 600) {
+      $('.scroll-up').addClass('scroll-up--active');
+    } else {
+      $('.scroll-up').removeClass('scroll-up--active');
+    }
   });
+  // Smooth Scroll
+  $('a[href*="#"]')
+    // Remove links that don't actually link to anything
+    .not('[href="#"]')
+    .not('[href="#0"]')
+    .click(function(event) {
+      // On-page links
+      if (
+        location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+        &&
+        location.hostname == this.hostname
+      ) {
+        // Figure out element to scroll to
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        // Does a scroll target exist?
+        if (target.length) {
+          // Only prevent default if animation is actually gonna happen
+          event.preventDefault();
+          $('html, body').animate({
+            scrollTop: target.offset().top - 100
+          }, 600);
+        }
+      }
+    });
   // Slide out menu
   // Slide out menu - Open menu
   $('.slide-out-menu-toggle').on('click', function() {
